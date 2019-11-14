@@ -1,0 +1,260 @@
+import numpy as np
+import pylab as plt
+
+
+                                            """Muestreo de señales  """
+
+
+"""Ejercicio 1"""
+"""Genere la se˜nal x(t) = 2cos(60πt)"""
+amplitud=2
+frecuencia=30
+#periodo=2*np.pi
+T=1/(6*frecuencia)
+x1=amplitud*np.cos(2*np.pi*frecuencia*muestreo)
+plt.plot(x1,label='x(t)=2cos(60pi*t)',color='red')
+plt.labelx=("x")
+plt.labely=("y")
+plt.legend(loc='best')
+plt.grid()
+#####################################################################
+"""Señal muestreada"""
+
+muestreo=np.arange(0,1,1/100)
+fase=0
+tiempomin=-0.2
+tiempomax=0.2
+amplitud=2
+frecuencia=30
+periodo=2*np.pi
+T=1/(6*frecuencia)
+x1=amplitud*np.cos(2*np.pi*frecuencia*muestreo)
+plt.grid()
+#tiempos de la grafica 
+nmin=np.ceil(tiempomin/T)
+nmax=np.floor(tiempomax/T)
+#muestras de la señal
+n=np.arange(nmin,nmax)
+#señal d emuestreo
+x1=np.cos(2*np.pi*n*T*frecuencia)
+#graficar señal
+plt.plot(n*T,x1)
+plt.plot(n*T,x1,'b.')
+
+"""muestreo la señal a 2B"""
+muestreo=np.arange(0,1,1/100)
+fase=0
+tiempomin=-0.2
+tiempomax=0.2
+amplitud=2
+frecuencia=30
+periodo=2*np.pi
+T=1/(2*frecuencia)
+x1=amplitud*np.cos(2*np.pi*frecuencia*muestreo)
+plt.grid()
+#tiempos de la grafica 
+nmin=np.ceil(tiempomin/T)
+nmax=np.floor(tiempomax/T)
+#muestras de la señal
+n=np.arange(nmin,nmax)
+#señal d emuestreo
+x1=np.cos(2*np.pi*n*T*frecuencia)
+#graficar señal
+plt.plot(n*T,x1)
+plt.plot(n*T,x1,'b.')
+
+
+"""muestreo la señal a 4B """
+muestreo=np.arange(0,1,1/100)
+fase=0
+tiempomin=-0.2
+tiempomax=0.2
+amplitud=2
+frecuencia=30
+periodo=2*np.pi
+T=1/(4*frecuencia)
+x1=amplitud*np.cos(2*np.pi*frecuencia*muestreo)
+plt.grid()
+#tiempos de la grafica 
+nmin=np.ceil(tiempomin/T)
+nmax=np.floor(tiempomax/T)
+#muestras de la señal
+n=np.arange(nmin,nmax)
+#señal d emuestreo
+x1=np.cos(2*np.pi*n*T*frecuencia)
+#graficar señal
+plt.plot(n*T,x1)
+plt.plot(n*T,x1,'b.')
+#############################################################################################################
+
+"""Ejercicio 2"""
+"""Genere la señal x(t) = 2cos(60πt)+2cos(80πt)+2cos(90πt)"""
+#fecuencias y amplitud de la señal
+f=30
+f1=40
+f2=45
+amp=2
+#timepo
+tmin=-0.02
+tmax=0.02
+
+t=np.linspace(tmin,tmax,400)#definir la señal de muestreo
+x23=(amp*np.cos(2*np.pi*f*t))+(amp*np.cos(2*np.pi*f1*t))+(amp*np.cos(2*np.pi*f2*t))
+
+#grafica de la señal
+plt.plot(t,x23,label="2cos(60πt)",color="yellow")
+plt.title("Muestreo de Señal a B")
+plt.xlabel("tiempo")
+plt.ylabel("voltaje")
+plt.grid()
+
+#periodo de muestreo
+T2=1/(2*f2)
+nmin2=np.ceil(tmin1/T2)#aproximacion decimal mas bajo
+nmax2=np.floor(tmax1/T2)#aprox decimal mas alto
+
+
+n1=np.arange(nmin2,nmax2)
+x12=(amp*np.cos(2*np.pi*f*n1*T2))+(amp*np.cos(2*np.pi*f1*n1*T2))+(amp*np.cos(2*np.pi*f2*n1*T2))
+plt.plot(n1*T2,x12,'b.')
+plt.show()
+
+#muestreode la señal a 2B
+
+T2=1/(4*f2)
+nmin2=np.ceil(tmin1/T2)#a
+nmax2=np.ceil(tmax1/T2)#
+
+#señal
+n1=np.arange(nmin2,nmax2)
+x12=(amp*np.cos(2*np.pi*f*n1*T2))+(amp*np.cos(2*np.pi*f1*n1*T2))+(amp*np.cos(2*np.pi*f2*n1*T2))
+plt.plot(n1*T2,x12,'b.')#grafica de la señal
+plt.show()
+
+
+#muestreode la señal a 4B
+T2=1/(8*f2)
+nmin2=np.ceil(tmin1/T2)
+nmax2=np.ceil(tmax1/T2)
+
+n1=np.arange(nmin2,nmax2)
+x12=(amp*np.cos(2*np.pi*f*n1*T2))+(amp*np.cos(2*np.pi*f1*n1*T2))+(amp*np.cos(2*np.pi*f2*n1*T2))
+plt.plot(n1*T2,x12,'b.')
+plt.show()
+
+
+#muestreode la señal a 10B
+T2=1/(64*f2)
+nmin2=np.ceil(tmin1/T2)
+nmax2=np.ceil(tmax1/T2)
+
+n1=np.arange(nmin2,nmax2)
+x12=(amp*np.cos(2*np.pi*f*n1*T2))+(amp*np.cos(2*np.pi*f1*n1*T2))+(amp*np.cos(2*np.pi*f2*n1*T2))
+plt.plot(n1*T2,x12,'b.')
+plt.show()
+
+########################################################################################################
+
+"""Ejercicio 3"""
+"""Señal x(t)=2cos(600pit)+2cos(800pit)+2cos(900pit)"""
+frec1=300
+frec2=400
+frec3=450
+#tiempos de oscilcion par ala funcion 
+tmin5=-0.002
+tmaxe5=0.002
+
+t5=np.linspace(tmin,tmax,400)
+#señal de muesteo
+x5=(2*np.cos(2*np.pi*frec1*t5))+(2*np.cos(2*np.pi*frec2*t5))+(2*np.cos(2*np.pi*frec3*t5))
+plt.plot(t5,x5,'green')
+
+
+T5=1/(4*frec3)
+
+nmine3=np.ceil(tmine3/T5)
+nmaxe3=np.floor(tmaxe3/T5)
+n5=np.arange(nmine3,nmaxe3)
+x5=(2*np.cos(2*np.pi*fr1*n5*T5))+(2*np.cos(2*np.pi*fr2*n5*T5))+(2*np.cos(2*np.pi*fr3*n5*T5))
+plt.plot(n5*T5,x5,'m.')
+plt.title("Muestreo señal")
+plt.xlabel("timepo")
+plt.ylabel("Voltaje")
+plt.grid()
+plt.show()
+
+x5=(2*np.cos(2*np.pi*frec1*t5))+(2*np.cos(2*np.pi*frec2*t5))+(2*np.cos(2*np.pi*frec3*t5))
+plt.plot(t5,x5,'green')
+
+T5=1/(2*frec3)
+
+nmine3=np.ceil(tmine3/T5)
+nmaxe3=np.floor(tmaxe3/T5)
+n5=np.arange(nmine3,nmaxe3)
+x5=(2*np.cos(2*np.pi*fr1*n5*T5))+(2*np.cos(2*np.pi*fr2*n5*T5))+(2*np.cos(2*np.pi*fr3*n5*T5))
+plt.plot(n5*T5,x5,'m.')
+plt.title("Muestreo señal")
+plt.xlabel("timepo")
+plt.ylabel("Voltaje")
+plt.grid()
+plt.show()
+
+
+###Muestreo señal 2B###
+
+t5=np.linspace(tmin,tmax,400)
+
+x5=(2*np.cos(2*np.pi*frec1*t5))+(2*np.cos(2*np.pi*frec2*t5))+(2*np.cos(2*np.pi*frec3*t5))
+plt.plot(t5,x5,'green')
+
+T5=1/(4*frec3)
+
+nmine3=np.ceil(tmine3/T5)
+nmaxe3=np.floor(tmaxe3/T5)
+n5=np.arange(nmine3,nmaxe3)
+x5=(2*np.cos(2*np.pi*fr1*n5*T5))+(2*np.cos(2*np.pi*fr2*n5*T5))+(2*np.cos(2*np.pi*fr3*n5*T5))
+plt.plot(n5*T5,x5,'r.')
+plt.title("Muestreo señal")
+plt.xlabel("timepo")
+plt.ylabel("Voltaje")
+plt.grid()
+plt.show()
+
+###Muestreo señal 4B###
+
+t5=np.linspace(tmin,tmax,400)
+
+x5=(2*np.cos(2*np.pi*frec1*t5))+(2*np.cos(2*np.pi*frec2*t5))+(2*np.cos(2*np.pi*frec3*t5))
+plt.plot(t5,x5,'green')
+
+T5=1/(8*frec3)
+
+nmine3=np.ceil(tmine3/T5)
+nmaxe3=np.floor(tmaxe3/T5)
+n5=np.arange(nmine3,nmaxe3)
+x5=(2*np.cos(2*np.pi*fr1*n5*T5))+(2*np.cos(2*np.pi*fr2*n5*T5))+(2*np.cos(2*np.pi*fr3*n5*T5))
+plt.plot(n5*T5,x5,'m.')
+plt.title("Muestreo señal")
+plt.xlabel("timepo")
+plt.ylabel("Voltaje")
+plt.grid()
+plt.show()
+
+###Muestreo señal 8B###
+t5=np.linspace(tmin,tmax,400)
+
+x5=(2*np.cos(2*np.pi*frec1*t5))+(2*np.cos(2*np.pi*frec2*t5))+(2*np.cos(2*np.pi*frec3*t5))
+plt.plot(t5,x5,'green')
+
+T5=1/(16*frec3)
+
+nmine3=np.ceil(tmine3/T5)
+nmaxe3=np.floor(tmaxe3/T5)
+n5=np.arange(nmine3,nmaxe3)
+x5=(2*np.cos(2*np.pi*fr1*n5*T5))+(2*np.cos(2*np.pi*fr2*n5*T5))+(2*np.cos(2*np.pi*fr3*n5*T5))
+plt.plot(n5*T5,x5,'r.')
+plt.title("Muestreo señal")
+plt.xlabel("timepo")
+plt.ylabel("Voltaje")
+plt.grid()
+plt.show()
